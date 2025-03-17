@@ -28,7 +28,7 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-apple py-4",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-soft" 
+          ? "bg-white/90 backdrop-blur-lg shadow-soft" 
           : "bg-transparent"
       )}
     >
@@ -38,7 +38,7 @@ const Header = () => {
             to="/" 
             className="text-xl font-display font-semibold tracking-tight transition-opacity duration-200 hover:opacity-80"
           >
-            Portfolio
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">Portfolio</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
