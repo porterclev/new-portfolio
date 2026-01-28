@@ -4,6 +4,13 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Github, Globe, Calendar, Tag } from "lucide-react";
 import { getProjectById, Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -127,23 +134,42 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          <div
-            className={cn(
-              "w-full rounded-xl overflow-hidden bg-secondary/30 transition-opacity duration-500",
-              isImageLoaded ? "opacity-100" : "opacity-0"
-            )}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-auto object-cover"
-              onLoad={() => setIsImageLoaded(true)}
-            />
-          </div>
-
           <div className="prose prose-gray max-w-none">
             <h2>Project Overview</h2>
             <p>{project.longDescription}</p>
+          </div>
+
+          <div className="h-full w-full rounded-xl overflow-hidden">
+            <Carousel>
+              <CarouselContent>
+                {project.media?.map((m, index) => (
+                  <CarouselItem key={index}>
+                    <div className="absolute top-2 z-10 px-3 py-1 text-xs text-white bg-black/50 max-w-xs">
+                      {project.mediaDescriptions?.[index] || ""}
+                    </div>
+                    <div className="relative w-full bg-secondary/30 rounded-xl overflow-hidden">
+                      {m.toLowerCase().endsWith(".mov") ? (
+                        <video
+                          src={m}
+                          controls
+                          className="aspect-video w-full h-full object-contain"
+                          onLoadedMetadata={() => setIsImageLoaded(true)}
+                        />
+                      ) : (
+                        <img
+                          src={m}
+                          alt={`${project.title} - Image ${index + 1}`}
+                          className="aspect-video w-full h-full object-contain"
+                          onLoad={() => setIsImageLoaded(true)}
+                        />
+                      )}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
           </div>
 
           <div className="border-t border-border pt-8 mt-12">

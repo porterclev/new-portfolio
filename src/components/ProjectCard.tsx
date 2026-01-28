@@ -37,7 +37,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     <div
       ref={cardRef}
       className={cn(
-        "group relative rounded-xl overflow-hidden transition-all duration-500 ease-apple bg-white border shadow-soft h-full transform",
+        "group relative rounded-xl overflow-hidden transition-all duration-500 ease-apple bg-white border shadow-soft h-full flex flex-col transform",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
       )}
       style={{
@@ -57,7 +57,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         />
       </div>
 
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <div className="flex flex-wrap gap-2 mb-3">
           {project.languages.map((language) => (
             <span
@@ -73,7 +73,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
         <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
 
-        <div className="flex items-center justify-between mt-auto pt-2">
+        <div className="flex items-end justify-between mt-auto pt-2">
           <Link
             to={`/project/${project.id}`}
             className="text-sm font-medium flex items-center transition-all duration-200 hover:text-primary/80 group"

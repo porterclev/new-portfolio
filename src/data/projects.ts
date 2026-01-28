@@ -7,7 +7,9 @@ export interface Project {
   tags: string[];
   languages: string[];
   image: string;
-  link: string;
+  media?: string[];
+  mediaDescriptions?: string[];
+  link?: string;
   github: string;
   featured: boolean;
   date: string;
@@ -17,24 +19,25 @@ export const projects: Project[] = [
   {
     id: "1",
     title: "2024 Lunabotics Rover",
-    description: "An interactive dashboard for personal finance tracking with data visualization and budgeting tools.",
+    description: "The first Lunabotics competition I entered with the CSULB team. This was my first time working hands-on with electrical systems and critical testing firmware and software to work in a hazardous enviornment.",
     longDescription: "A comprehensive personal finance management application built with React and Python. The dashboard offers real-time visualization of spending patterns, budget tracking, and financial goal monitoring. Features include interactive charts, transaction categorization using machine learning, and secure bank account integration via Plaid API. The backend utilizes Django REST framework for data processing and SQLite for local storage.",
-    tags: ["Web App", "Data Visualization", "API Integration"],
-    languages: ["Python", "C"],
-    image: "/luna24.png",
-    link: "https://example.com/finance",
+    tags: ["Robotics", "Firmware", "CV", "GUI"],
+    languages: ["Python", "C", "C++"],
+    image: "/luna24/luna24.png",
+    media: ["/luna24/demo.mov", "/luna24/luna24-2.jpg", "/luna24/luna24-3.jpg", "/luna24/frame.jpg"],
+    mediaDescriptions: ["First Prototype Demo", "Side View", "Wiring Phase", "Finish Frame"],
     github: "https://github.com/example/finance",
     featured: true,
-    date: "2023-05-15"
+    date: "8/28/2024 to 8/28/25"
   },
   {
     id: "2",
     title: "2025 Lunabotics Rover",
-    description: "A computer vision project that classifies images using convolutional neural networks.",
+    description: "My second Lunabotics competition. Iterating on the previous year's firmware and software by adding LiDAR and Camera SLAM to allow for Full Autonomous Driving Functionality.",
     longDescription: "This image classification system uses deep learning techniques to identify objects in images. Built with Python and TensorFlow, it implements a custom CNN architecture trained on the ImageNet dataset. The model achieves 92% accuracy on validation data and includes features like transfer learning with pre-trained models (ResNet50, VGG16) and data augmentation to improve performance. The application includes a web interface for uploading and testing new images.",
     tags: ["Machine Learning", "Computer Vision", "Deep Learning"],
     languages: ["Python", "C", "C++"],
-    image: "/placeholder.svg",
+    image: "/luna25/luna25.jpg",
     link: "https://example.com/classifier",
     github: "https://github.com/example/classifier",
     featured: true,
@@ -56,12 +59,13 @@ export const projects: Project[] = [
   {
     id: "4",
     title: "BMO Robot",
-    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    description: "Repurposed 2024 mini rover into a recreation of BMO from Adventure Time. Very fun passion project that was showcased at many conventions and events.",
     longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
     tags: ["Mobile App", "Health", "Cross-platform"],
     languages: ["Python", "C", "C++", "Javascript"],
-    image: "/placeholder.svg",
-    link: "https://example.com/fitness",
+    image: "/bmo/bmo-2.jpg",
+    media: ["/bmo/bmo-1.jpg", "/bmo/bmo-2.jpg"],
+    mediaDescriptions: ["Wiring and Prototyping", "Club Fair"],
     github: "https://github.com/example/fitness",
     featured: false,
     date: "2022-06-12"
