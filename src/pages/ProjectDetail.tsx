@@ -15,7 +15,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    
+
     // Simulate loading delay
     const timer = setTimeout(() => {
       if (id) {
@@ -29,7 +29,7 @@ const ProjectDetail = () => {
       }
       setIsLoading(false);
     }, 300);
-    
+
     return () => clearTimeout(timer);
   }, [id, navigate]);
 
@@ -77,21 +77,21 @@ const ProjectDetail = () => {
                 </span>
               ))}
             </div>
-            
+
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
               {project.title}
             </h1>
-            
+
             <p className="text-muted-foreground mb-6">
               {project.description}
             </p>
-            
+
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground mb-8">
               <div className="flex items-center">
                 <Calendar className="h-4 w-4 mr-2" />
                 <span>{project.date}</span>
               </div>
-              
+
               {project.tags.length > 0 && (
                 <div className="flex items-center">
                   <Tag className="h-4 w-4 mr-2" />
@@ -99,7 +99,7 @@ const ProjectDetail = () => {
                 </div>
               )}
             </div>
-            
+
             <div className="flex flex-wrap gap-4 mb-8">
               {project.github && (
                 <a
@@ -112,7 +112,7 @@ const ProjectDetail = () => {
                   GitHub Repository
                 </a>
               )}
-              
+
               {project.link && (
                 <a
                   href={project.link}
@@ -121,13 +121,13 @@ const ProjectDetail = () => {
                   className="btn-primary"
                 >
                   <Globe className="mr-2 h-4 w-4" />
-                  Live Demo
+                  Showcase
                 </a>
               )}
             </div>
           </div>
-          
-          <div 
+
+          <div
             className={cn(
               "w-full rounded-xl overflow-hidden bg-secondary/30 transition-opacity duration-500",
               isImageLoaded ? "opacity-100" : "opacity-0"
@@ -140,12 +140,12 @@ const ProjectDetail = () => {
               onLoad={() => setIsImageLoaded(true)}
             />
           </div>
-          
+
           <div className="prose prose-gray max-w-none">
             <h2>Project Overview</h2>
             <p>{project.longDescription}</p>
           </div>
-          
+
           <div className="border-t border-border pt-8 mt-12">
             <h2 className="text-xl font-semibold mb-4">Interested in this project?</h2>
             <p className="text-muted-foreground mb-6">

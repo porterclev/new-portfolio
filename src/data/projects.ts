@@ -16,12 +16,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Personal Finance Dashboard",
+    title: "2024 Lunabotics Rover",
     description: "An interactive dashboard for personal finance tracking with data visualization and budgeting tools.",
     longDescription: "A comprehensive personal finance management application built with React and Python. The dashboard offers real-time visualization of spending patterns, budget tracking, and financial goal monitoring. Features include interactive charts, transaction categorization using machine learning, and secure bank account integration via Plaid API. The backend utilizes Django REST framework for data processing and SQLite for local storage.",
     tags: ["Web App", "Data Visualization", "API Integration"],
-    languages: ["JavaScript", "Python", "SQL"],
-    image: "/placeholder.svg",
+    languages: ["Python", "C"],
+    image: "/luna24.png",
     link: "https://example.com/finance",
     github: "https://github.com/example/finance",
     featured: true,
@@ -29,11 +29,11 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "Machine Learning Image Classifier",
+    title: "2025 Lunabotics Rover",
     description: "A computer vision project that classifies images using convolutional neural networks.",
     longDescription: "This image classification system uses deep learning techniques to identify objects in images. Built with Python and TensorFlow, it implements a custom CNN architecture trained on the ImageNet dataset. The model achieves 92% accuracy on validation data and includes features like transfer learning with pre-trained models (ResNet50, VGG16) and data augmentation to improve performance. The application includes a web interface for uploading and testing new images.",
     tags: ["Machine Learning", "Computer Vision", "Deep Learning"],
-    languages: ["Python", "JavaScript"],
+    languages: ["Python", "C", "C++"],
     image: "/placeholder.svg",
     link: "https://example.com/classifier",
     github: "https://github.com/example/classifier",
@@ -42,33 +42,7 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with product management, cart functionality, and payment processing.",
-    longDescription: "A complete e-commerce platform built with React, Node.js, and MongoDB. The application features product catalog management, user authentication, shopping cart functionality, and secure payment processing via Stripe. The frontend uses Redux for state management and styled-components for a responsive design. The backend implements a RESTful API with Express.js and includes features like order tracking, inventory management, and admin dashboard.",
-    tags: ["Full Stack", "E-commerce", "Payment Integration"],
-    languages: ["JavaScript", "TypeScript", "HTML/CSS"],
-    image: "/placeholder.svg",
-    link: "https://example.com/ecommerce",
-    github: "https://github.com/example/ecommerce",
-    featured: false,
-    date: "2022-11-20"
-  },
-  {
-    id: "4",
-    title: "Automated Trading Bot",
-    description: "An algorithmic trading system that executes trades based on technical analysis and market signals.",
-    longDescription: "This automated trading bot uses Python to analyze market data and execute trades on cryptocurrency exchanges. The system implements various technical analysis strategies including moving averages, RSI, and MACD indicators. Features include backtesting capabilities on historical data, risk management algorithms, and a dashboard for monitoring performance. The application integrates with multiple exchanges via their APIs and includes a notification system for trade alerts.",
-    tags: ["Algorithm", "Finance", "Automation"],
-    languages: ["Python", "SQL"],
-    image: "/placeholder.svg",
-    link: "https://example.com/tradingbot",
-    github: "https://github.com/example/tradingbot",
-    featured: false,
-    date: "2022-08-05"
-  },
-  {
-    id: "5",
-    title: "Mobile Fitness Tracker",
+    title: "DegreeMate",
     description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
     longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
     tags: ["Mobile App", "Health", "Cross-platform"],
@@ -80,18 +54,57 @@ export const projects: Project[] = [
     date: "2022-06-12"
   },
   {
-    id: "6",
-    title: "Smart Home Control System",
-    description: "An IoT system for controlling and automating home devices through a web interface and mobile app.",
-    longDescription: "This smart home system connects and controls various IoT devices through a central hub. Built with Python for the backend processing and React for the user interfaces, it allows users to manage lights, thermostats, security cameras, and other smart devices. The system implements MQTT protocol for device communication, includes automation rules based on time and sensor triggers, and provides historical data analysis. The hardware components use Raspberry Pi and ESP32 microcontrollers.",
-    tags: ["IoT", "Home Automation", "Embedded Systems"],
-    languages: ["Python", "JavaScript", "C++"],
+    id: "4",
+    title: "BMO Robot",
+    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
+    tags: ["Mobile App", "Health", "Cross-platform"],
+    languages: ["Python", "C", "C++", "Javascript"],
     image: "/placeholder.svg",
-    link: "https://example.com/smarthome",
-    github: "https://github.com/example/smarthome",
+    link: "https://example.com/fitness",
+    github: "https://github.com/example/fitness",
     featured: false,
-    date: "2022-03-30"
-  }
+    date: "2022-06-12"
+  },
+  {
+    id: "5",
+    title: "BeachHacks7.0",
+    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
+    tags: ["Mobile App", "Health", "Cross-platform"],
+    languages: ["JavaScript", "TypeScript"],
+    image: "/placeholder.svg",
+    link: "https://example.com/fitness",
+    github: "https://github.com/example/fitness",
+    featured: false,
+    date: "2022-06-12"
+  },
+  {
+    id: "6",
+    title: "jQuery Contribution",
+    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
+    tags: ["Mobile App", "Health", "Cross-platform"],
+    languages: ["JavaScript"],
+    image: "/placeholder.svg",
+    link: "https://www.linkedin.com/pulse/mystery-eternal-date-picker-decoding-jquery-dilemma-porter-clevidence-ded3c/?trackingId=uV043gENTyidNk0PfUHwBg%3D%3D",
+    github: "https://github.com/jquery/jquery-ui/pull/2268",
+    featured: true,
+    date: "2022-06-12"
+  },
+  {
+    id: "7",
+    title: "OED Test Implementation",
+    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
+    tags: ["Mobile App", "Health", "Cross-platform"],
+    languages: ["JavaScript"],
+    image: "/placeholder.svg",
+    link: "",
+    github: "https://github.com/OpenEnergyDashboard/OED/pull/1126",
+    featured: false,
+    date: "2022-06-12"
+  },
 ];
 
 export const getAllLanguages = (): string[] => {

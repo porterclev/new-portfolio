@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         "group relative rounded-xl overflow-hidden transition-all duration-500 ease-apple bg-white border shadow-soft h-full transform",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
       )}
-      style={{ 
+      style={{
         transitionDelay: `${index * 100}ms`,
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -56,23 +56,23 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           )}
         />
       </div>
-      
+
       <div className="p-5">
         <div className="flex flex-wrap gap-2 mb-3">
           {project.languages.map((language) => (
-            <span 
-              key={language} 
+            <span
+              key={language}
               className="text-xs font-medium py-1 px-2 rounded-full bg-secondary/70"
             >
               {language}
             </span>
           ))}
         </div>
-        
+
         <h3 className="text-lg font-semibold tracking-tight mb-2">{project.title}</h3>
-        
+
         <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-        
+
         <div className="flex items-center justify-between mt-auto pt-2">
           <Link
             to={`/project/${project.id}`}
@@ -81,7 +81,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             View details
             <ArrowUpRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
-          
+
           <div className="flex items-center space-x-2">
             {project.github && (
               <a
@@ -94,14 +94,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 <Github className="h-4 w-4" />
               </a>
             )}
-            
+
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full transition-colors duration-200 hover:bg-secondary"
-                aria-label="Live Demo"
+                aria-label="Showcase"
               >
                 <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -109,7 +109,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
         </div>
       </div>
-      
+
       {project.featured && (
         <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-medium py-1 px-2 rounded-full shadow-sm">
           Featured

@@ -27,25 +27,25 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-apple py-4",
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-soft" 
+        isScrolled
+          ? "bg-white/80 backdrop-blur-md shadow-soft"
           : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="text-xl font-display font-semibold tracking-tight transition-opacity duration-200 hover:opacity-80"
           >
-            Portfolio
+            Porter Clevidence
           </Link>
-          
+
           <nav className="hidden md:flex items-center space-x-8">
             <NavLinks />
           </nav>
-          
-          <button 
+
+          <button
             className="block md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -58,7 +58,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-soft animate-fade-in">
@@ -73,14 +73,14 @@ const Header = () => {
 
 const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   const location = useLocation();
-  
+
   const links = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/#projects" },
     { name: "About", path: "/#about" },
     { name: "Contact", path: "/#contact" }
   ];
-  
+
   return (
     <>
       {links.map((link) => (

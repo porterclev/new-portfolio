@@ -36,17 +36,17 @@ const Footer = () => {
           <div>
             <h3 className="font-medium mb-3">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>contact@example.com</li>
-              <li>San Francisco, CA</li>
+              <li>porter.clevidence@gmail.com</li>
+              <li>Fountain Valley, CA</li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-6 border-t border-border">
+        {/* <div className="mt-12 pt-6 border-t border-border">
           <p className="text-center text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
