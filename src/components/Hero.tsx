@@ -39,7 +39,7 @@ const Hero = () => {
               <span className="relative z-10 md:whitespace-nowrap">
                 <span className="relative px-1">
                   <span className="absolute inset-x-0 bottom-0 h-3 bg-secondary/50 -z-10 rounded-sm transform -rotate-1"></span>
-                  Software Engineer1
+                  Software Engineer
                 </span>
               </span>
             </h1>
