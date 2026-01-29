@@ -41,7 +41,7 @@ const AboutMe = () => (
                         <h3 className="font-semibold mb-4 mt-8">Technologies</h3>
                         <div className="flex flex-wrap gap-2">
                             {[ "Ros2", "React", "Django", "SQL", "MongoDB", "AWS", "Docker", 
-                            "TensorFlow", "Git", "MongoDB", "Hono", "Prisma", "Flask", "Power BI"
+                            "TensorFlow", "Git", "Hono", "Prisma", "Flask", "Power BI"
                                 ].map((skill) => (
                                     <span
                                         key={skill}
