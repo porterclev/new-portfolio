@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     id: "3",
     title: "DegreeMate",
-    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
+    description: "This was my senior project. It's an AI Degree Planner for Universities.",
     longDescription: "A comprehensive fitness tracking application built with React Native for iOS and Android. The app tracks workouts, nutrition, and overall fitness metrics. Features include customizable workout plans, calorie counting, progress visualization, and integration with wearable devices. The backend uses Firebase for user authentication, real-time data synchronization, and cloud storage. The app also implements push notifications for workout reminders and achievement celebrations.",
     tags: ["Mobile App", "Health", "Cross-platform"],
     languages: ["JavaScript", "TypeScript"],
