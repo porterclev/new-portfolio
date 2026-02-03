@@ -110,11 +110,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </div>
       </div>
 
-      {project.featured && (
+      {/* {project.featured && (
         <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-medium py-1 px-2 rounded-full shadow-sm">
           Featured
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -8,18 +8,17 @@ const Footer = () => {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Link to="/" className="text-xl font-display font-semibold tracking-tight">
+            {/* <Link to="/" className="text-xl font-display font-semibold tracking-tight">
               Portfolio
-            </Link>
-            <p className="mt-2 text-muted-foreground">
+            </Link> */}
+            {/* <p className="mt-2 text-muted-foreground">
               Showcasing innovative software solutions across multiple languages and technologies.
-            </p>
+            </p> */}
             
             <div className="mt-4 flex space-x-4">
-              <SocialLink href="#" icon={<Github className="h-5 w-5" />} label="GitHub" />
-              <SocialLink href="#" icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" />
-              <SocialLink href="#" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
-              <SocialLink href="#" icon={<Mail className="h-5 w-5" />} label="Email" />
+              <SocialLink href="https://github.com/porterclev" icon={<Github className="h-5 w-5" />} label="GitHub" />
+              <SocialLink href="https://www.linkedin.com/in/porterclev/" icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" />
+              <SocialLink href="mailto:porter.clevidence@gmail.com" icon={<Mail className="h-5 w-5" />} label="Email" />
             </div>
           </div>
           
@@ -27,9 +26,8 @@ const Footer = () => {
             <h3 className="font-medium mb-3">Links</h3>
             <ul className="space-y-2">
               <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/#projects">Projects</FooterLink>
-              <FooterLink href="/#about">About</FooterLink>
-              <FooterLink href="/#contact">Contact</FooterLink>
+              <FooterLink href="#projects">Projects</FooterLink>
+              <FooterLink href="#about">About</FooterLink>
             </ul>
           </div>
           

@@ -34,20 +34,20 @@ const Hero = () => {
             "transition-all duration-1000 ease-apple",
             isLoaded ? "opacity-100" : "opacity-0 translate-y-8"
           )}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               Hi, I'm Porter Clevidence,
-              <span className="relative z-10 md:whitespace-nowrap">
-                <span className="relative px-1">
-                  <span className="absolute inset-x-0 bottom-0 h-3 bg-secondary/50 -z-10 rounded-sm transform -rotate-1"></span>
-                  Software Engineer
-                </span>
-              </span>
             </h1>
+            <span className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 relative z-10 md:whitespace-nowrap">
+              <span className="relative px-1">
+                <span className="absolute inset-x-0 bottom-0 h-3 bg-secondary/50 -z-10 rounded-sm transform -rotate-1"></span>
+                Software Engineer
+              </span>
+            </span>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I'm a passionate CSULB student senior currently working as a Programming Lead on our NASA Lunabotics team, developing distributed
-              control systems, LiDAR SLAM navigation, and firmware solutions. My main expertise lie in robotics, embedded systems, AI-driven sensor
-              fusion, IoT device simulation, and full stack web development.
+            <p className="text-lg md:text-xl text-muted-foreground mt-8 mb-8 max-w-2xl mx-auto">
+              I'm a Cal Poly Pomona Master's student, currently researching Low Light Image Processing, Autonomous Vehicles, and Robotic Solutions utilizing
+              Boston Dynamic's Robot Dog, Spot. My main expertise lie in robotics, embedded systems, AI-driven sensor
+              fusion, IoT device Connectivity & Simulation, and full stack web development.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

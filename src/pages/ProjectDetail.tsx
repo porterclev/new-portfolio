@@ -135,7 +135,7 @@ const ProjectDetail = () => {
           </div>
 
           <div className="prose prose-gray max-w-none">
-            <h2>Project Overview</h2>
+            <h2 className="mb-4">Project Overview</h2>
             <p>{project.longDescription}</p>
           </div>
 
@@ -148,7 +148,7 @@ const ProjectDetail = () => {
                       {project.mediaDescriptions?.[index] || ""}
                     </div>
                     <div className="relative w-full bg-secondary/30 rounded-xl overflow-hidden">
-                      {m.toLowerCase().endsWith(".mov") ? (
+                      {m.toLowerCase().endsWith(".mov") || m.toLowerCase().endsWith(".mp4") ? (
                         <video
                           src={m}
                           controls

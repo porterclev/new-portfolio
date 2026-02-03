@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
@@ -19,9 +18,9 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when route changes
+    // Close mobile menu when pathname OR hash changes (handle same-page anchor clicks)
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <header
@@ -73,32 +72,115 @@ const Header = () => {
 
 const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState<string | "">(
+    location.hash ? location.hash.replace("#", "") : ""
+  );
 
   const links = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/#projects" },
     { name: "About", path: "/#about" },
-    { name: "Contact", path: "/#contact" }
   ];
+
+  // Update active when location.hash changes (e.g., via navigation)
+  useEffect(() => {
+    setActiveSection(location.hash ? location.hash.replace("#", "") : "");
+  }, [location.hash]);
+
+  // IntersectionObserver to set the active section while scrolling
+  useEffect(() => {
+    const sectionIds = links
+      .map((l) => (l.path.includes("#") ? l.path.split("#")[1] : null))
+      .filter(Boolean) as string[];
+
+    if (!sectionIds.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // pick the entry with largest intersectionRatio that's intersecting
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length) {
+          setActiveSection(visible[0].target.id);
+        } else {
+          // If scrolled to top (no section intersecting), show Home
+          if (window.scrollY < 80) setActiveSection("");
+        }
+      },
+      { threshold: [0.25, 0.5, 0.75] }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    const onScroll = () => {
+      if (window.scrollY < 80) setActiveSection("");
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   return (
     <>
-      {links.map((link) => (
-        <Link
-          key={link.name}
-          to={link.path}
-          className={cn(
-            "relative font-medium text-sm transition-all duration-200",
-            mobile ? "py-2 px-4 block w-full hover:bg-secondary rounded-md" : "hover:opacity-80",
-            link.path === location.pathname && "font-semibold"
-          )}
-        >
-          {link.name}
-          {link.path === location.pathname && !mobile && (
-            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full animate-fade-in" />
-          )}
-        </Link>
-      ))}
+      {links.map((link) => {
+        const [path, hash] = link.path.split("#");
+        const hashName = hash || "";
+        const isHome = link.path === "/";
+        const isActive = isHome
+          ? activeSection === ""
+          : activeSection === hashName;
+
+        const toProp = hash ? { pathname: path, hash: `#${hashName}` } : link.path;
+
+        const handleClick = (e: React.MouseEvent) => {
+          if (isHome) {
+            // If already on home route, smooth scroll to top and clear hash
+            if (location.pathname === "/") {
+              e.preventDefault();
+              navigate("/");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setActiveSection("");
+            }
+            return;
+          }
+
+          if (hash && location.pathname === path) {
+            // same-route anchor click: navigate to update location.hash and smooth scroll
+            e.preventDefault();
+            navigate(`${path}#${hashName}`);
+            const el = document.getElementById(hashName);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+            setActiveSection(hashName);
+          }
+        };
+
+        return (
+          <Link
+            key={link.name}
+            to={toProp}
+            onClick={handleClick}
+            className={cn(
+              "relative font-medium text-sm transition-all duration-200",
+              mobile ? "py-2 px-4 block w-full hover:bg-secondary rounded-md" : "hover:opacity-80",
+              isActive && "font-semibold"
+            )}
+          >
+            {link.name}
+            {isActive && !mobile && (
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full animate-fade-in" />
+            )}
+          </Link>
+        );
+      })}
     </>
   );
 };
