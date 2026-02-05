@@ -116,7 +116,7 @@ export const projects: Project[] = [
     image: `${import.meta.env.BASE_URL}placeholder.svg`,
     link: "https://www.linkedin.com/pulse/mystery-eternal-date-picker-decoding-jquery-dilemma-porter-clevidence-ded3c/?trackingId=uV043gENTyidNk0PfUHwBg%3D%3D",
     github: "https://github.com/jquery/jquery-ui/pull/2268",
-    featured: true,
+    featured: false,
     date: "2022-06-12"
   },
   {
@@ -154,6 +154,30 @@ export const projects: Project[] = [
     github: "https://github.com/OpenEnergyDashboard/OED/pull/1126",
     featured: false,
     date: "11/12/2024 to 12/15/2024"
+  },
+  {
+    id: "10",
+    title: "College Campus Autonomous Parking System",
+    description: "",
+    longDescription: "",
+    tags: ["SUMO", "Autonomous", "Vehicles", "Car"],
+    languages: ["Python", "C++"],
+    image: `${import.meta.env.BASE_URL}placeholder.svg`,
+    github: "",
+    featured: true,
+    date: "8/28/25 to now"
+  },
+    {
+    id: "11",
+    title: "Low Light Image Enhancement using Dual Tree Complex Wave Transforms",
+    description: "",
+    longDescription: "",
+    tags: ["pytorch", "cuda", "research"],
+    languages: ["Python"],
+    image: `${import.meta.env.BASE_URL}placeholder.svg`,
+    github: "",
+    featured: true,
+    date: "8/28/25 to now"
   },
 ];
 
