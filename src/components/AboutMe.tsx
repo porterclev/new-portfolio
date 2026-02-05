@@ -9,19 +9,19 @@ const AboutMe = () => (
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight mb-4 mt-4">About Me</h2>
                     <p className="text-muted-foreground mb-4">
-                        I'm a passionate software engineer with expertise in building web applications,
-                        machine learning systems, and mobile applications. My approach to software
-                        development focuses on creating elegant solutions to complex problems.
+                        I'm a Master's Student software engineer at Cal Poly Pomona. For two years I've focused on robotics, 
+                        developing firmware and software for 5+ rovers for a NASA competition. I've also worked a ton 
+                        in simulations; creating synthetic environments for IoT devices and autonomous vehicles to utilize their sensor data 
+                        to prototype and test algorithms before deploying them. My most current work experience was at RBC Bearings, where I 
+                        developed software tools to manage, automate, and analyze data from their manufacturing processes to improve efficiency.
                     </p>
-                    <p className="text-muted-foreground mb-4">
-                        With experience across multiple programming languages including JavaScript,
-                        TypeScript, Python, and more, I enjoy tackling diverse technical challenges
-                        and continuously expanding my skillset.
-                    </p>
-                    <p className="text-muted-foreground">
+                    {/* <p className="text-muted-foreground mb-4">
+                        Some of my hobbies include gaming, hiking, and snowboarding. 
+                    </p> */}
+                    {/* <p className="text-muted-foreground">
                         When I'm not coding, you can find me exploring new technologies, contributing
                         to open-source projects, or sharing my knowledge through technical writing.
-                    </p>
+                    </p> */}
                 </div>
 
                 <div className="space-y-6">

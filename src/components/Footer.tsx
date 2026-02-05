@@ -35,6 +35,7 @@ const Footer = () => {
             <h3 className="font-medium mb-3">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
               <li>porter.clevidence@gmail.com</li>
+              <li>714-330-4649</li>
               <li>Fountain Valley, CA</li>
             </ul>
           </div>

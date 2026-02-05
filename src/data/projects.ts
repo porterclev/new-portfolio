@@ -95,7 +95,9 @@ export const projects: Project[] = [
   {
     id: "5",
     title: "BeachHacks7.0",
-    description: "",
+    description: `
+      A Hackathon registeration website hosted at California State University of Long Beach.
+    `,
     longDescription: "",
     tags: ["", "", ""],
     languages: ["JavaScript", "TypeScript"],
