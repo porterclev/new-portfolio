@@ -158,7 +158,11 @@ export const projects: Project[] = [
   {
     id: "10",
     title: "College Campus Autonomous Parking System",
-    description: "",
+    description: `
+      For the final project in my Autonomous Vehicles course, we developed a one to one traffic simulation of the 
+      Cal Poly Pomona Campus. Autonomous and Standard vehicles were applied to simulate changes in traffic; using a miniture
+      autonomous car to demonstrate real-world application.
+    `,
     longDescription: "",
     tags: ["SUMO", "Autonomous", "Vehicles", "Car"],
     languages: ["Python", "C++"],
@@ -170,7 +174,9 @@ export const projects: Project[] = [
     {
     id: "11",
     title: "Low Light Image Enhancement using Dual Tree Complex Wave Transforms",
-    description: "",
+    description: `
+      A research paper compiling different low light image enhancement algorithms and analyzing their effectiveness. 
+    `,
     longDescription: "",
     tags: ["pytorch", "cuda", "research"],
     languages: ["Python"],
