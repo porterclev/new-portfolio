@@ -15,6 +15,7 @@ const Footer = () => {
               Showcasing innovative software solutions across multiple languages and technologies.
             </p> */}
             
+            <h3 className="font-medium mb-3">Links</h3>
             <div className="mt-4 flex space-x-4">
               <SocialLink href="https://github.com/porterclev" icon={<Github className="h-5 w-5" />} label="GitHub" />
               <SocialLink href="https://www.linkedin.com/in/porterclev/" icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" />
@@ -23,7 +24,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-medium mb-3">Links</h3>
+            <h3 className="font-medium mb-3">Sections</h3>
             <ul className="space-y-2">
               <FooterLink href="/">Home</FooterLink>
               <FooterLink href="#projects">Projects</FooterLink>
