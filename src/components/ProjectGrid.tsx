@@ -52,7 +52,7 @@ const ProjectGrid = ({
   };
 
   return (
-    <section className="py-16 w-full" id="projects">
+    <section className="py-16 w-full scroll-mt-24" id="projects">
       <div className="container px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tight mb-8">{title}</h2>
         

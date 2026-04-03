@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -157,8 +158,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
             // same-route anchor click: navigate to update location.hash and smooth scroll
             e.preventDefault();
             navigate(`${path}#${hashName}`);
-            const el = document.getElementById(hashName);
-            if (el) el.scrollIntoView({ behavior: "smooth" });
+            scrollToSection(hashName);
             setActiveSection(hashName);
           }
         };

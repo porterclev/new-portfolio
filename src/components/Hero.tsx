@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,10 +16,11 @@ const Hero = () => {
   }, []);
 
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection("projects");
+  };
+
+  const scrollToContact = () => {
+    scrollToSection("contact");
   };
 
   return (
@@ -58,12 +60,13 @@ const Hero = () => {
                 View Projects
               </button>
 
-              <a
-                href="#contact"
+              <button
+                type="button"
                 className="btn-secondary"
+                onClick={scrollToContact}
               >
                 Contact Me
-              </a>
+              </button>
             </div>
           </div>
         </div>

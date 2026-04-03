@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const AboutMe = () => (
-    <section id="about" className="py-16 bg-secondary/20">
+    <section id="about" className="py-16 bg-secondary/20 scroll-mt-24">
         <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
