@@ -1,9 +1,26 @@
+export type ProjectContentBlock = 
+  | {
+      type: "paragraph";
+      content: string;
+    }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      caption?: string;
+    }
+  | {
+    type: "link";
+    description: string;
+    link: string;
+    };
 
 export interface Project {
   id: string;
   title: string;
   description: string;
-  longDescription: string;
+  longDescription?: string;
+  longDescriptionBlocks?: ProjectContentBlock[];
   tags: string[];
   languages: string[];
   image: string;
@@ -20,10 +37,57 @@ export const projects: Project[] = [
     id: "1",
     title: "2024 Lunabotics Rover",
     description: "The first Lunabotics competition I entered with the CSULB team. This was my first time working hands-on with electrical systems and critical testing firmware and software to work in a hazardous enviornment.",
-    longDescription: `
+    // longDescription: ``,
+    longDescriptionBlocks: [
+      {
+        type: "paragraph",
+        content:
+        `
+        For the 2024 Lunabotics competition, I co-led the programming team, which is designing, developing, and integrating the software and firmware for our dual-rover system. I was also responsible for completing detailed documents on timelines and QA metrics, and for meeting many demo and event deadlines.
+        The rover was split into an excavation and cargo system. The excavation system was a large rover that utilized a large bucket wheel to extract sediment from the ground. The material would be scooped into a conveyor belt, which would then shoot the soil out the back of the rover into a pile. The smaller rover would then scoop up the loose soil with a tracker-like front and move it to the desired location.
+        To move the larger excavation rover, two brushless NEO motors were used on either side. These motors were connected via a 100:1 gearbox. These motors were controlled by a VESC that received CAN signals from a Raspberry Pi housed in the electrical box. The bucket wheel and conveyor belt were controlled by a Sabortooth motor controller, as both were driven by brushed BAG motors. The Sabortooth was controlled by the STM32 Nucleo, which was also receiving control signals via CAN from the Raspberry Pi. Lastly, to deploy the cargo bot, two servos were mounted in the back of the exicator bot, which unlatched at the start of the competition. These servos were also controlled using the STM32 Nucleo and Raspberry Pi combination.
+        The cargo bot was designed similarly; however, due to budget constraints, brushed motors were used. This meant the Raspberry Pi would send all CAN messages to the STM32 Nucleo. The microcontroller would control an actuator that moved the tractor bucket up and down to “scope” as well as control two Sabertooth motor controllers.
+        `
+      },
+      {
+        type: "image",
+        src: `${import.meta.env.BASE_URL}luna24/system-diagram.png`,
+        alt: "",
+        caption: "Diagram of Exavator Robot",
+      },
+      {
+        type: "paragraph",
+        content:
+        `
+        The software stack used on the rovers was a combination of Python and C. Python was run on the Raspberry Pi to serve as a wireless control interface, allowing our teleop workstation to communicate with the Pi and convert controls into CAN signals. CAN packets were sent to either the VESC to control the treads or the STM microcontroller. The microcontroller, with C-written firmware, would convert these CAN signals into PWM signals that would then control the more primitive motors in the system.
+        ` 
+      },
+      {
+        type: "paragraph",
+        content:
+        `Lastly, to monitor what the excavator rover was viewing during the competition, a webcam was attached to it. The teleop workstation would request an image from the rover, the rover would then snap a picture of what the camera was currently viewing, and send it over.`
+      },
+      {
+        type: "link",
+        description:
+        `Rasberry Pi Code`,
+        link: "https://github.com/CSULB-RMC/ros2-ws-2024",
+      },
+      {
+        type: "link",
+        description:
+        `STM32 Nucleo Code`,
+        link: "https://github.com/CSULB-RMC/STM32Cube-ws-2024"
+      },
+      {
+        type: "paragraph",
+        content:
+        `
+        Sensor data collected from the rover was sent through an MQTT broker to a MongoDB collection. By connecting it through a broker, sensor systems on the rover were simulated to test the robustness of the firmware and software. This also allowed for remote monitoring of the system.
+        `
+      }
+    ],
     
-    
-    `,
     tags: ["Robotics", "Firmware", "Computer Vision", "GUI"],
     languages: ["Python", "C", "C++"],
     image: `${import.meta.env.BASE_URL}luna24/luna24.png`,
